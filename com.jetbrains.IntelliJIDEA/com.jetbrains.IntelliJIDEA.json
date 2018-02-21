@@ -1,0 +1,79 @@
+{
+    "app-id": "com.jetbrains.IntelliJIDEA",
+    "branch": "stable",
+    "command": "idea",
+    "runtime": "org.freedesktop.Sdk",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.openjdk8"
+    ],
+    "separate-locales": false,
+    "finish-args": [
+        "--device=dri",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--filesystem=home",
+        "--share=ipc",
+        "--share=network",
+        "--socket=x11",
+        "--talk-name=ca.desrt.dconf",
+        "--talk-name=org.freedesktop.Notifications"
+    ],
+    "modules": [
+        {
+            "name": "openjdk",
+            "buildsystem": "simple",
+            "build-commands": [
+                "/usr/lib/sdk/openjdk8/install-jdk.sh"
+            ]
+        },                  
+        {
+            "name": "idea",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D apply_extra /app/bin/apply_extra",
+                "install -D idea.sh /app/bin/idea",
+                "install -Dm644 com.jetbrains.IntelliJIDEA.desktop /app/share/applications/com.jetbrains.IntelliJIDEA.desktop",
+                "install -Dm644 com.jetbrains.IntelliJIDEA.png /app/share/icons/hicolor/128x128/apps/com.jetbrains.IntelliJIDEA.png",
+                "install -Dm644 com.jetbrains.IntelliJIDEA-64.png /app/share/icons/hicolor/64x64/apps/com.jetbrains.IntelliJIDEA.png"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "tar xzf idea.tar.gz --strip 1",
+                        "rm idea.tar.gz"
+                    ]
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "idea.sh",
+                    "commands": [ "/app/extra/bin/idea.sh" ]
+                },
+                {
+                    "type": "file",
+                    "path": "com.jetbrains.IntelliJIDEA.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.jetbrains.IntelliJIDEA.png"
+                },
+                {
+                    "type": "file",
+                    "path": "com.jetbrains.IntelliJIDEA-64.png"
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "idea.tar.gz",
+                    "url": "https://download.jetbrains.com/idea/ideaIC-2017.3.4.tar.gz",
+                    "only-arches": [ "x86_64" ],
+                    "sha256": "893e92ab4f60bc006ae4c30a1b04d090960f2cc9df8c0ee7e750d6fa73741a97",
+                    "size": 457068423
+                }
+            ]
+        }
+    ]
+}

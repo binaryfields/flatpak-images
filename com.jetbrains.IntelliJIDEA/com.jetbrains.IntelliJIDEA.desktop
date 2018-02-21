@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=IntelliJ IDEA
+Exec=idea
+Icon=com.jetbrains.IntelliJIDEA
+Comment=Java, Groovy, Scala and Android development
+Terminal=false
+Type=Application
+Categories=Development;IDE;Java;

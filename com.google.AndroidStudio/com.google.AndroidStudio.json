@@ -1,0 +1,76 @@
+{
+    "app-id": "com.google.AndroidStudio",
+    "branch": "stable",
+    "command": "android",
+    "runtime": "org.freedesktop.Sdk",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "separate-locales": false,
+    "finish-args": [
+        "--allow=devel",
+        "--allow=multiarch",
+        "--device=all",
+        "--env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--filesystem=home",
+        "--share=ipc",
+        "--share=network",
+        "--socket=pulseaudio",
+        "--socket=system-bus",
+        "--socket=x11",
+        "--talk-name=ca.desrt.dconf",
+        "--talk-name=org.freedesktop.Notifications"
+    ],
+    "modules": [
+        {
+            "name": "android-studio",
+            "buildsystem": "simple",
+            "build-commands": [
+                "install -D apply_extra /app/bin/apply_extra",
+                "install -D android-studio.sh /app/bin/android-studio",
+                "install -Dm644 com.google.AndroidStudio.desktop /app/share/applications/com.google.AndroidStudio.desktop",
+                "install -Dm644 com.google.AndroidStudio.png /app/share/icons/hicolor/128x128/apps/com.google.AndroidStudio.png",
+                "install -Dm644 com.google.AndroidStudio-64.png /app/share/icons/hicolor/64x64/apps/com.google.AndroidStudio.png"
+            ],
+            "sources": [
+                {
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "unzip -q android-studio.zip",
+                        "rm android-studio.zip",                        
+                        "mv android-studio/* .",
+                        "rmdir android-studio"                  
+                    ]
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "android-studio.sh",
+                    "commands": [ "/app/extra/bin/studio.sh" ]
+                },
+                {
+                    "type": "file",
+                    "path": "com.google.AndroidStudio.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "com.google.AndroidStudio.png"
+                },
+                {
+                    "type": "file",
+                    "path": "com.google.AndroidStudio-64.png"
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "android-studio.zip",
+                    "url": "https://dl.google.com/dl/android/studio/ide-zips/3.0.1.0/android-studio-ide-171.4443003-linux.zip",
+                    "only-arches": [ "x86_64" ],
+                    "sha256": "ad7110ed2ffc662b7a13efa5064390c8e8e74815d8c688351bd8829331852acf",
+                    "size": 773670325
+                }
+            ]
+        }
+    ]
+}

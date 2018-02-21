@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Android Studio
+Exec=android
+Icon=com.google.AndroidStudio
+Comment=The Official IDE for Android
+Terminal=false
+Type=Application
+Categories=Development;IDE;Android;
