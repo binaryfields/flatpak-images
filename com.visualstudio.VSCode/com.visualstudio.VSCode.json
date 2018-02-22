@@ -54,8 +54,9 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "tar xf vscode.tar.gz --strip 1",
+                        "tar xf vscode.tar.gz",
                         "rm vscode.tar.gz",
+                        "mv VSCode-* vscode",
                         "install -Dm644 /app/share/applications/com.visualstudio.VSCode.desktop export/share/applications/com.visualstudio.VSCode.desktop"
                     ]
                 },
@@ -63,7 +64,7 @@
                     "type": "script",
                     "dest-filename": "code.sh",
                     "commands": [
-                        "exec env PATH=\"$PATH:$HOME/.local/bin:$XDG_DATA_HOME/node_modules/bin\" /app/extra/bin/code --extensions-dir=$XDG_DATA_HOME/vscode/extensions \"$@\""
+                        "exec env PATH=\"$PATH:$HOME/.local/bin:$XDG_DATA_HOME/node_modules/bin\" /app/extra/vscode/bin/code --extensions-dir=$XDG_DATA_HOME/vscode/extensions \"$@\""
                     ]
                 },
                 {

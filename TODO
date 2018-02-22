@@ -3,7 +3,6 @@
 - images
 	- add appdata.xml
 	- use desktop/icons from package
-	- decide on /app/extra structure
 - apps
 	- android-studio
 		- sdk

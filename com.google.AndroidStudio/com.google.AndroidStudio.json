@@ -15,8 +15,8 @@
         "--share=network",
         "--socket=pulseaudio",
         "--socket=x11",
-        "--talk-name=org.freedesktop.Notifications"
-        "--env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1",
+        "--talk-name=org.freedesktop.Notifications",
+        "--env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1"
     ],
     "modules": [
         {
@@ -35,15 +35,13 @@
                     "dest-filename": "apply_extra",
                     "commands": [
                         "unzip -q android-studio.zip",
-                        "rm android-studio.zip",                        
-                        "mv android-studio/* .",
-                        "rmdir android-studio"                  
+                        "rm android-studio.zip"
                     ]
                 },
                 {
                     "type": "script",
                     "dest-filename": "android-studio.sh",
-                    "commands": [ "/app/extra/bin/studio.sh" ]
+                    "commands": [ "/app/extra/android-studio/bin/studio.sh" ]
                 },
                 {
                     "type": "file",

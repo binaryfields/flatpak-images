@@ -1,5 +1,5 @@
 {
-    "app-id": "com.jetbrains.CLion",
+    "app-id": "com.jetbrains.CLion-ARM",
     "branch": "stable",
     "command": "clion",
     "runtime": "org.freedesktop.Sdk",
@@ -22,9 +22,9 @@
             "build-commands": [
                 "install -D apply_extra /app/bin/apply_extra",
                 "install -D clion.sh /app/bin/clion",
-                "install -Dm644 com.jetbrains.CLion.desktop /app/share/applications/com.jetbrains.CLion.desktop",
-                "install -Dm644 com.jetbrains.CLion.png /app/share/icons/hicolor/128x128/apps/com.jetbrains.CLion.png",
-                "install -Dm644 com.jetbrains.CLion-64.png /app/share/icons/hicolor/64x64/apps/com.jetbrains.CLion.png"
+                "install -Dm644 com.jetbrains.CLion-ARM.desktop /app/share/applications/com.jetbrains.CLion-ARM.desktop",
+                "install -Dm644 com.jetbrains.CLion-ARM.png /app/share/icons/hicolor/128x128/apps/com.jetbrains.CLion-ARM.png",
+                "install -Dm644 com.jetbrains.CLion-ARM-64.png /app/share/icons/hicolor/64x64/apps/com.jetbrains.CLion-ARM.png"
             ],
             "sources": [
                 {
@@ -33,7 +33,9 @@
                     "commands": [
                         "tar xf clion.tar.gz",
                         "rm clion.tar.gz",
-                        "mv clion-* clion"
+                        "mv clion-* clion",
+                        "tar xf gcc-arm.tar.bz2",
+                        "rm gcc-arm.tar.bz2"                        
                     ]
                 },
                 {
@@ -43,15 +45,15 @@
                 },
                 {
                     "type": "file",
-                    "path": "com.jetbrains.CLion.desktop"
+                    "path": "com.jetbrains.CLion-ARM.desktop"
                 },
                 {
                     "type": "file",
-                    "path": "com.jetbrains.CLion.png"
+                    "path": "com.jetbrains.CLion-ARM.png"
                 },
                 {
                     "type": "file",
-                    "path": "com.jetbrains.CLion-64.png"
+                    "path": "com.jetbrains.CLion-ARM-64.png"
                 },
                 {
                     "type": "extra-data",
@@ -60,7 +62,15 @@
                     "url": "https://download.jetbrains.com/cpp/CLion-2017.3.3.tar.gz",
                     "sha256": "6d807282a36f25e922580f1c8b2155705d4a20aa8d4e4c06bf17193f0c020948",
                     "size": 331047955
-                }
+                },
+                {
+                    "type": "extra-data",
+                    "filename": "gcc-arm.tar.bz2",
+                    "only-arches": [ "x86_64" ],
+                    "url": "https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2",
+                    "sha256": "96a029e2ae130a1210eaa69e309ea40463028eab18ba19c1086e4c2dafe69a6a",
+                    "size": 99857645
+                }                
             ]
         }
     ]

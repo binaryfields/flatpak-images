@@ -41,14 +41,15 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "tar xf idea.tar.gz --strip 1",
-                        "rm idea.tar.gz"
+                        "tar xf idea.tar.gz",
+                        "rm idea.tar.gz",
+                        "mv idea-IC-* idea"
                     ]
                 },
                 {
                     "type": "script",
                     "dest-filename": "idea.sh",
-                    "commands": [ "/app/extra/bin/idea.sh" ]
+                    "commands": [ "/app/extra/idea/bin/idea.sh" ]
                 },
                 {
                     "type": "file",
