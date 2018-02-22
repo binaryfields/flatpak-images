@@ -1,9 +1,10 @@
 # TODO
 
-- add appdata
-- android-studio
-	- sdk
-	- sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
-- clion
-	- cmake build fails
-	
+- images
+	- add appdata.xml
+	- use desktop/icons from package
+	- decide on /app/extra structure
+- apps
+	- android-studio
+		- sdk
+		- sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386

@@ -10,8 +10,8 @@ declare -a apps=(
 	"com.jetbrains.CLion"
 	"com.jetbrains.IntelliJIDEA"
 	"com.sublimetext.three"
+	"com.visualstudio.VSCode"
 )
-
 
 mkdir -p "${build_dir}"
 

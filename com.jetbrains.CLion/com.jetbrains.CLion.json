@@ -7,15 +7,12 @@
     "sdk": "org.freedesktop.Sdk",
     "separate-locales": false,
     "finish-args": [
-        "--device=dri",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
+        "--device=all",
         "--filesystem=home",
         "--share=ipc",
         "--share=network",
+        "--socket=pulseaudio",
         "--socket=x11",
-        "--talk-name=ca.desrt.dconf",
         "--talk-name=org.freedesktop.Notifications"
     ],
     "modules": [
@@ -34,7 +31,7 @@
                     "type": "script",
                     "dest-filename": "apply_extra",
                     "commands": [
-                        "tar xzf clion.tar.gz --strip 1",
+                        "tar xf clion.tar.gz --strip 1",
                         "rm clion.tar.gz"
                     ]
                 },
@@ -58,8 +55,8 @@
                 {
                     "type": "extra-data",
                     "filename": "clion.tar.gz",
-                    "url": "https://download.jetbrains.com/cpp/CLion-2017.3.3.tar.gz",
                     "only-arches": [ "x86_64" ],
+                    "url": "https://download.jetbrains.com/cpp/CLion-2017.3.3.tar.gz",
                     "sha256": "6d807282a36f25e922580f1c8b2155705d4a20aa8d4e4c06bf17193f0c020948",
                     "size": 331047955
                 }

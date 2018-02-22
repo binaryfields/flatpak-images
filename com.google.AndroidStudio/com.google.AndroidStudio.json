@@ -1,7 +1,7 @@
 {
     "app-id": "com.google.AndroidStudio",
     "branch": "stable",
-    "command": "android",
+    "command": "android-studio",
     "runtime": "org.freedesktop.Sdk",
     "runtime-version": "1.6",
     "sdk": "org.freedesktop.Sdk",
@@ -10,18 +10,13 @@
         "--allow=devel",
         "--allow=multiarch",
         "--device=all",
-        "--env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1",
-        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
-        "--filesystem=xdg-run/dconf",
-        "--filesystem=~/.config/dconf:ro",
         "--filesystem=home",
         "--share=ipc",
         "--share=network",
         "--socket=pulseaudio",
-        "--socket=system-bus",
         "--socket=x11",
-        "--talk-name=ca.desrt.dconf",
         "--talk-name=org.freedesktop.Notifications"
+        "--env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1",
     ],
     "modules": [
         {

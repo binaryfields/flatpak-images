@@ -63,6 +63,7 @@
                 {
                     "type": "extra-data",
                     "filename": "sublime.deb",
+                    "only-arches": [ "x86_64" ],                    
                     "url": "https://download.sublimetext.com/files/sublime-text_build-3143_amd64.deb",
                     "sha256": "ecd78f6fd3a61dc2d68725a368343589d8df4193434c0275cd49b2026fd0fb81",
                     "size": 8190414
