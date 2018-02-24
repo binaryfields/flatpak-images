@@ -12,6 +12,8 @@ declare -a apps=(
 	"com.jetbrains.IntelliJIDEA"
 	"com.sublimetext.three"
 	"com.visualstudio.VSCode"
+	"net.fsuae.FS-UAE"
+	"net.sf.VICE"
 )
 
 mkdir -p "${build_dir}"

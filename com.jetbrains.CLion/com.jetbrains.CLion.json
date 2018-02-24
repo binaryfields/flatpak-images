@@ -39,7 +39,7 @@
                 {
                     "type": "script",
                     "dest-filename": "clion.sh",
-                    "commands": [ "/app/extra/clion/bin/clion.sh" ]
+                    "commands": [ "exec env PATH=\"$PATH:$HOME/.local/bin\" /app/extra/clion/bin/clion.sh" ]
                 },
                 {
                     "type": "file",

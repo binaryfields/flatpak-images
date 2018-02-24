@@ -17,6 +17,25 @@
     ],
     "modules": [
         {
+            "name": "libudev",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ar x libudev1.deb",
+                "tar xf data.tar.xz",
+                "mkdir -p /app/lib",
+                "cp lib/x86_64-linux-gnu/libudev.so.* /app/lib/"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "dest-filename": "libudev1.deb",
+                    "only-arches": [ "x86_64" ],
+                    "url": "http://ftp.br.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u1_amd64.deb",
+                    "sha256": "46041ad9886e3dd89d6101cb43791d6c9d77c33e1b40045ce46b71cce9fffb7c"
+                }
+            ]
+        },
+        {
             "name": "clion",
             "buildsystem": "simple",
             "build-commands": [
@@ -41,7 +60,7 @@
                 {
                     "type": "script",
                     "dest-filename": "clion.sh",
-                    "commands": [ "/app/extra/clion/bin/clion.sh" ]
+                    "commands": [ "exec env PATH=\"$PATH:$HOME/.local/bin\" /app/extra/clion/bin/clion.sh" ]
                 },
                 {
                     "type": "file",
