@@ -5,6 +5,15 @@
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.26",
     "sdk": "org.gnome.Sdk",
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g",
+        "arch": {
+            "x86_64": {
+                "cflags": "-O3 -g -pipe -Wall -m64 -march=nocona -mtune=core2 -fexceptions -ffast-math -fstack-protector --param=ssp-buffer-size=4 -Wp,-D_FORTIFY_SOURCE=2"
+            }
+        }
+    },    
     "finish-args": [
         "--device=all",
         "--filesystem=home:ro",
@@ -98,9 +107,13 @@
                 "/share/man"                
             ],            
             "config-opts": [
-                "--enable-gnomeui3"
+                "--enable-gnomeui3",
+                "--enable-parsid",
+                "--disable-arch",
+                "--without-oss"
             ],
             "post-install": [
+                "install -Dm644 net.sf.VICE.appdata.xml /app/share/appdata/net.sf.VICE.appdata.xml",
                 "install -Dm644 net.sf.VICE.desktop /app/share/applications/net.sf.VICE.desktop",
                 "install -Dm644 net.sf.VICE.png /app/share/icons/hicolor/128x128/apps/net.sf.VICE.png",
                 "install -Dm644 net.sf.VICE-64.png /app/share/icons/hicolor/64x64/apps/net.sf.VICE.png"
@@ -110,6 +123,10 @@
                     "type": "archive",
                     "url": "https://versaweb.dl.sourceforge.net/project/vice-emu/releases/vice-3.1.tar.gz",
                     "sha256": "3eb8159633816095006dec36c5c3edd055a87fd8bda193a1194a6801685d1240"
+                },
+                {
+                    "type": "file",
+                    "path": "net.sf.VICE.appdata.xml"
                 },
                 {
                     "type": "file",
