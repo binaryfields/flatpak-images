@@ -41,6 +41,7 @@
                 "/share/doc"
             ],
             "post-install": [
+                "install -Dm644 net.fsuae.FS-UAE.appdata.xml /app/share/appdata/net.fsuae.FS-UAE.appdata.xml",
                 "sed -i s/NoDisplay=.*/NoDisplay=false/ /app/share/applications/fs-uae.desktop",
                 "cp /app/share/mime/packages/fs-uae.xml /app/share/mime/packages/net.fsuae.FS-UAE.xml"
             ],            
@@ -49,6 +50,10 @@
                     "type": "git",
                     "url": "https://github.com/FrodeSolheim/fs-uae",
                     "branch": "stable"
+                },
+                {
+                    "type": "file",
+                    "path": "net.fsuae.FS-UAE.appdata.xml"
                 }
             ]
         }
