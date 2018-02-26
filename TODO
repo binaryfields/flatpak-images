@@ -1,5 +1,9 @@
 # TODO
 
+- vice
+	- fix loader issues
+- fs-uae
+	- fix autogen.sh issue
 - images
 	- add appdata.xml
 - extensions
