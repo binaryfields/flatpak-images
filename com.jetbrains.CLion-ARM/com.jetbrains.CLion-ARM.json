@@ -30,8 +30,8 @@
                     "type": "file",
                     "dest-filename": "libudev1.deb",
                     "only-arches": [ "x86_64" ],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u1_amd64.deb",
-                    "sha256": "46041ad9886e3dd89d6101cb43791d6c9d77c33e1b40045ce46b71cce9fffb7c"
+                    "url": "http://ftp.br.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u2_amd64.deb",
+                    "sha256": "97e0adf86943e2acafe7f343a065f7e6b7306e084797851f2274a40513df6ad7"
                 }
             ]
         },
@@ -78,9 +78,9 @@
                     "type": "extra-data",
                     "filename": "clion.tar.gz",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://download.jetbrains.com/cpp/CLion-2017.3.3.tar.gz",
-                    "sha256": "6d807282a36f25e922580f1c8b2155705d4a20aa8d4e4c06bf17193f0c020948",
-                    "size": 331047955
+                    "url": "https://download.jetbrains.com/cpp/CLion-2017.3.4.tar.gz",
+                    "sha256": "8f7d946a71e061b88061e6a00763a026e2b50ec4b4fc05df3b73d684aedeb2fb",
+                    "size": 331195446
                 },
                 {
                     "type": "extra-data",

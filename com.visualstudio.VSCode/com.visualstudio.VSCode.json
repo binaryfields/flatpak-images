@@ -87,17 +87,17 @@
                     "type": "extra-data",
                     "filename": "vscode.tar.gz",
                     "only-arches": ["x86_64"],
-                    "url": "https://vscode-update.azurewebsites.net/1.20.1/linux-x64/stable",
-                    "sha256": "3562d23f5a0735bef55baadafc04815404170c24c99dc4254f7a9cb0bbc7a067",
-                    "size": 65805135
+                    "url": "https://vscode-update.azurewebsites.net/1.21.1/linux-x64/stable",
+                    "sha256": "34b11a39599d114d8a0fe70503aa78468db27a071e4e102a1398310ce8e420a6",
+                    "size": 67065892
                 },
                 {
                     "type": "extra-data",
                     "filename": "vscode.tar.gz",
                     "only-arches": ["i386"],
-                    "url": "https://vscode-update.azurewebsites.net/1.20.1/linux-ia32/stable",
-                    "sha256": "56ab95667b2cddd6a4fee2ad373ccb87fbfa3038a946eab39b31d1750afacc3f",
-                    "size": 66820122
+                    "url": "https://vscode-update.azurewebsites.net/1.21.1/linux-ia32/stable",
+                    "sha256": "921db122d9a67d9bbaddb6e90837b9429e4f8bf088850c1e0cc0504fa281bc30",
+                    "size": 68083785
                 }
             ]
         }
