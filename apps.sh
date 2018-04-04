@@ -6,9 +6,9 @@ gpg_dir=~/.gnupg
 gpg_key=596AE2EE4A73DB1605334629662603BD42FFB34C
 
 declare -a apps=(
-#	"com.google.AndroidStudio"
+	"com.google.AndroidStudio"
 	"com.jetbrains.CLion-ARM"
-#	"com.jetbrains.IntelliJIDEA"
+	"com.jetbrains.IntelliJIDEA"
 #	"com.sublimetext.three"
 #	"com.visualstudio.VSCode"
 #	"net.fsuae.FS-UAE"
