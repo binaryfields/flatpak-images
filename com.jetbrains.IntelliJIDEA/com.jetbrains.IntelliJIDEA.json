@@ -67,9 +67,9 @@
                     "type": "extra-data",
                     "filename": "idea.tar.gz",
                     "only-arches": [ "x86_64" ],
-                    "url": "https://download-cf.jetbrains.com/idea/ideaIC-2018.1.tar.gz",
-                    "sha256": "d8db6815815211cea44d031e981e7d3eb6739005bdf4a6ec5a8b3df785f3b421",
-                    "size": 541403905
+                    "url": "https://download-cf.jetbrains.com/idea/ideaIC-2018.1.2.tar.gz",
+                    "sha256": "2fbbc2ad29082ccdda0422fa082556c180eb80f0d7238865604a49855e5bbb68",
+                    "size": 542298503
                 }
             ]
         }
