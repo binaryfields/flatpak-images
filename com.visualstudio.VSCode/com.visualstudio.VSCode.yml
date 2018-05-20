@@ -1,0 +1,73 @@
+app-id: com.visualstudio.VSCode
+branch: stable
+command: code
+base: io.atom.electron.BaseApp
+base-version: stable
+runtime: org.freedesktop.Sdk
+runtime-version: 1.6
+sdk: org.freedesktop.Sdk
+separate-locales: false
+finish-args: 
+  - --device=dri
+  - --filesystem=home
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
+  - --env=NPM_CONFIG_GLOBALCONFIG=/app/etc/npmrc
+modules: 
+  - name: nodejs
+    cleanup: 
+      - /include 
+      - /share
+      - /app/lib/node_modules/npm/changelogs 
+      - /app/lib/node_modules/npm/doc
+      - /app/lib/node_modules/npm/html 
+      - /app/lib/node_modules/npm/man
+      - /app/lib/node_modules/npm/scripts
+    sources: 
+      - type: archive
+        url: https://nodejs.org/dist/v8.9.4/node-v8.9.4.tar.gz
+        sha256: 729b44b32b2f82ecd5befac4f7518de0c4e3add34e8fe878f745740a66cbbc01
+  - name: vscode
+    buildsystem: simple
+    build-commands:
+      - install -D apply_extra /app/bin/apply_extra
+      - install -D code.sh /app/bin/code
+      - install -Dm644 com.visualstudio.VSCode.desktop /app/share/applications/com.visualstudio.VSCode.desktop
+      - install -Dm644 com.visualstudio.VSCode.png /app/share/icons/hicolor/128x128/apps/com.visualstudio.VSCode.png
+      - install -Dm644 com.visualstudio.VSCode-64.png /app/share/icons/hicolor/64x64/apps/com.visualstudio.VSCode.png
+      - install -Dm644 npmrc /app/etc/npmrc
+    sources:
+      - type: script
+        dest-filename: apply_extra
+        commands: 
+          - tar xf vscode.tar.gz
+          - rm vscode.tar.gz
+          - mv VSCode-* vscode
+          - install -Dm644 /app/share/applications/com.visualstudio.VSCode.desktop export/share/applications/com.visualstudio.VSCode.desktop
+      
+      - type: script
+        dest-filename: code.sh
+        commands: 
+          - exec env PATH=\$PATH:$HOME/.local/bin:$XDG_DATA_HOME/node_modules/bin\ /app/extra/vscode/bin/code --extensions-dir=$XDG_DATA_HOME/vscode/extensions \$@\
+      
+      - type: file
+        path: com.visualstudio.VSCode.desktop
+      
+      - type: file
+        path: com.visualstudio.VSCode.png
+      
+      - type: file
+        path: com.visualstudio.VSCode-64.png
+      
+      - type: file
+        path: npmrc
+      
+      - type: extra-data
+        filename: vscode.tar.gz
+        only-arches: [x86_64]
+        url: https://vscode-update.azurewebsites.net/1.23.1/linux-x64/stable
+        sha256: f3d1d1bf9de4d4bdd53da2f08816e4673c0f84422257330dc6d117873fa2cc7f
+        size: 68325851

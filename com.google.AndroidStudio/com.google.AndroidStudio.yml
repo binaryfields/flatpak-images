@@ -1,0 +1,53 @@
+app-id: com.google.AndroidStudio
+branch: stable
+command: android-studio
+runtime: org.freedesktop.Sdk
+runtime-version: 1.6
+sdk: org.freedesktop.Sdk
+separate-locales: false
+finish-args: 
+  - --allow=devel
+  - --allow=multiarch
+  - --device=all
+  - --filesystem=home
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
+  - --env=ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
+modules: 
+  - name: android-studio
+    buildsystem: simple
+    build-commands: 
+      - install -D apply_extra /app/bin/apply_extra
+      - install -D android-studio.sh /app/bin/android-studio
+      - install -Dm644 com.google.AndroidStudio.desktop /app/share/applications/com.google.AndroidStudio.desktop
+      - install -Dm644 com.google.AndroidStudio.png /app/share/icons/hicolor/128x128/apps/com.google.AndroidStudio.png
+      - install -Dm644 com.google.AndroidStudio-64.png /app/share/icons/hicolor/64x64/apps/com.google.AndroidStudio.png
+    sources: 
+      - type: script
+        dest-filename: apply_extra
+        commands: 
+          - unzip -q android-studio.zip
+          - rm android-studio.zip
+      
+      - type: script
+        dest-filename: android-studio.sh
+        commands: [ /app/extra/android-studio/bin/studio.sh ]
+      
+      - type: file
+        path: com.google.AndroidStudio.desktop
+      
+      - type: file
+        path: com.google.AndroidStudio.png
+      
+      - type: file
+        path: com.google.AndroidStudio-64.png
+      
+      - type: extra-data
+        filename: android-studio.zip
+        url: https://dl.google.com/dl/android/studio/ide-zips/3.1.2.0/android-studio-ide-173.4720617-linux.zip
+        only-arches: [ x86_64 ]
+        sha256: 13f290279790df570bb6592f72a979a495f7591960a378abea7876ece7252ec1
+        size: 894052929

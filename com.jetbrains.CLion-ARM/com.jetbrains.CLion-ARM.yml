@@ -1,0 +1,75 @@
+
+app-id: com.jetbrains.CLion-ARM
+branch: stable
+command: clion
+runtime: org.freedesktop.Sdk
+runtime-version: 1.6
+sdk: org.freedesktop.Sdk
+separate-locales: false
+finish-args: 
+  - --device=all
+  - --filesystem=home
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
+modules: 
+  - name: libudev
+    buildsystem: simple
+    build-commands: 
+      - ar x libudev1.deb
+      - tar xf data.tar.xz
+      - mkdir -p /app/lib
+      - cp lib/x86_64-linux-gnu/libudev.so.* /app/lib/
+    sources: 
+      - type: file
+        dest-filename: libudev1.deb
+        only-arches: [ x86_64 ]
+        url: http://ftp.br.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u2_amd64.deb
+        sha256: 97e0adf86943e2acafe7f343a065f7e6b7306e084797851f2274a40513df6ad7
+  - name: clion
+    buildsystem: simple
+    build-commands: 
+      - install -D apply_extra /app/bin/apply_extra
+      - install -D clion.sh /app/bin/clion
+      - install -Dm644 com.jetbrains.CLion-ARM.desktop /app/share/applications/com.jetbrains.CLion-ARM.desktop
+      - install -Dm644 com.jetbrains.CLion-ARM.png /app/share/icons/hicolor/128x128/apps/com.jetbrains.CLion-ARM.png
+      - install -Dm644 com.jetbrains.CLion-ARM-64.png /app/share/icons/hicolor/64x64/apps/com.jetbrains.CLion-ARM.png
+    sources:
+      - type: script
+        dest-filename: apply_extra
+        commands: 
+          - tar xf clion.tar.gz
+          - rm clion.tar.gz
+          - mv clion-* clion
+          - tar xf gcc-arm.tar.bz2
+          - rm gcc-arm.tar.bz2    
+
+      - type: script
+        dest-filename: clion.sh
+        commands: 
+          - exec env PATH=\$PATH:$HOME/.local/bin\ /app/extra/clion/bin/clion.sh 
+
+      - type: file
+        path: com.jetbrains.CLion-ARM.desktop
+      
+      - type: file
+        path: com.jetbrains.CLion-ARM.png
+      
+      - type: file
+        path: com.jetbrains.CLion-ARM-64.png
+      
+      - type: extra-data
+        filename: clion.tar.gz
+        only-arches: [ x86_64 ]
+        url: https://download.jetbrains.com/cpp/CLion-2018.1.2.tar.gz
+        sha256: 8a2f58ca3f7ebcbe0e4c256d7478acf34cbecc65197612b10df5af05f26a1e95
+        size: 343383152
+
+      - type: extra-data
+        filename: gcc-arm.tar.bz2
+        only-arches: [ x86_64 ]
+        url: https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2
+        sha256: 96a029e2ae130a1210eaa69e309ea40463028eab18ba19c1086e4c2dafe69a6a
+        size: 99857645
