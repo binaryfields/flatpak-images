@@ -38,7 +38,7 @@ modules:
       - type: script
         dest-filename: sublime.sh
         commands:
-          - exec /app/extra/opt/sublime_text/sublime_text \$@\ 
+          - exec /app/extra/opt/sublime_text/sublime_text $@
       
       - type: file
         path: com.sublimetext.three.desktop

@@ -51,7 +51,7 @@ modules:
       - type: script
         dest-filename: code.sh
         commands: 
-          - exec env PATH=\$PATH:$HOME/.local/bin:$XDG_DATA_HOME/node_modules/bin\ /app/extra/vscode/bin/code --extensions-dir=$XDG_DATA_HOME/vscode/extensions \$@\
+          - exec env PATH=$PATH:$HOME/.local/bin:$XDG_DATA_HOME/node_modules/bin /app/extra/vscode/bin/code --extensions-dir=$XDG_DATA_HOME/vscode/extensions $@
       
       - type: file
         path: com.visualstudio.VSCode.desktop
