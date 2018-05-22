@@ -69,6 +69,16 @@ modules:
             url: git://anongit.freedesktop.org/xorg/app/mkfontscale
             tag: mkfontscale-1.1.2
   
+  - name: xa
+    buildsystem: simple
+    build-commands: 
+      - make && make install DESTDIR=/app
+    cleanup: [ '*' ]
+    sources:
+      - type: archive
+        url: http://www.floodgap.com/retrotech/xa/dists/xa-2.3.8.tar.gz
+        sha256: 3b97d2fe8891336676ca28ff127b69e997f0b5accf2c7009b4517496929b462a
+
   - name: vice
     cleanup: 
       - /cache
@@ -78,8 +88,7 @@ modules:
       - /share/info
       - /share/man                
     config-opts: 
-      - --enable-gnomeui3
-      - --enable-parsid
+      - --enable-native-gtk3ui
       - --disable-arch
       - --without-oss
     post-install: 
@@ -89,8 +98,8 @@ modules:
       - install -Dm644 net.sf.VICE-64.png /app/share/icons/hicolor/64x64/apps/net.sf.VICE.png
     sources: 
       - type: archive
-        url: https://versaweb.dl.sourceforge.net/project/vice-emu/releases/vice-3.1.tar.gz
-        sha256: 3eb8159633816095006dec36c5c3edd055a87fd8bda193a1194a6801685d1240
+        url: https://ayera.dl.sourceforge.net/project/vice-emu/releases/vice-3.2.tar.gz
+        sha256: 28d99f5e110720c97ef16d8dd4219cf9a67661d58819835d19378143697ba523
       
       - type: file
         path: net.sf.VICE.appdata.xml
