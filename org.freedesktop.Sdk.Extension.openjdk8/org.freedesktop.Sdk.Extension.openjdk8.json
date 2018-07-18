@@ -27,59 +27,17 @@
             "sources": [
                 {
                     "type": "file",
-                    "only-arches": ["i386"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170824T035401Z/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u144-b01-1_i386.deb",
+                    "only-arches": ["x86_64"],
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u171-b11-2_amd64.deb",
                     "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "f649cb6d369e3df9637b29f36f5ed638aba61d8af09c6799d38b5cebbb5644b8"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["i386"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170824T035401Z/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u144-b01-1_i386.deb",
-                    "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "fe5706efca245f0c99f28a4166898043582dcd1af61b0c57ecdc2e08d076aa19"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["aarch64"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170824T035401Z/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u144-b01-1_arm64.deb",
-                    "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "c01b7394d3bf6a779ed297ff8e850fab3bb21007f8c5aafc0c963ddacf13d2a3"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["aarch64"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170824T035401Z/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u144-b01-1_arm64.deb",
-                    "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "07e8dfcbab4e005b3d91203854562898142fa3bb45e3d306cfbafe71e8971478"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["arm"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170826T213145Z/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u144-b01-1_armhf.deb",
-                    "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "9def80f9b513a82ef427d595b651f7ce9eb37dc621b1925dc2f3f0aa94734ff3"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["arm"],
-                    "url": "http://snapshot.debian.org/archive/debian/20170826T213145Z/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u144-b01-1_armhf.deb",
-                    "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "f93a6d5e3fafc48cee1b006eed51148c9f0f9a0b4a3d0c9c3414b769a38a56fd"
+                    "sha256": "f6cc4da4d9f324ba846309a24bf9d2cd0c32de4381ba6ac2385ece93dfed80fc"
                 },
                 {
                     "type": "file",
                     "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u151-b12-1_amd64.deb",
-                    "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "a3a79595cce250a3fb1ac094796c3497ebce2ac0572750eed2280ae8b82f5b74"
-                },
-                {
-                    "type": "file",
-                    "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u151-b12-1_amd64.deb",
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u171-b11-2_amd64.deb",
                     "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "1449a7860c5da6e5ea8d117071ceca6fc9dc6330a009f25f534c9dcfb08cb245"
+                    "sha256": "22e162ade2d7ebc6a98acdfe9fa2092cdeb662424c7e0f5073332b29db58a931"
                 },
                 {
                     "type": "file",
