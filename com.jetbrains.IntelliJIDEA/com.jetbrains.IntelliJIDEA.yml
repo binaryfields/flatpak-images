@@ -53,6 +53,6 @@ modules:
       - type: extra-data
         filename: idea.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download-cf.jetbrains.com/idea/ideaIC-2018.2.tar.gz
-        sha256: 5ac0db316d0d9a3984adaa088ea8f59bc46b8a733e11a21ddce4f073a2d2ae64
-        size: 520591686
+        url: https://download-cf.jetbrains.com/idea/ideaIC-2018.2.1.tar.gz
+        sha256: 5dc3659adc2dca85d24decb2242021ad8421f6392d2b95836f6cf33ce7f7b811
+        size: 520793136
