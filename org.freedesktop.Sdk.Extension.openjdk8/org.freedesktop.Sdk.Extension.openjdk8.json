@@ -1,9 +1,9 @@
 {
     "id": "org.freedesktop.Sdk.Extension.openjdk8",
-    "branch": "1.6",
+    "branch": "18.08",
     "build-extension": true,
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "1.6",
+    "runtime-version": "18.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [],
     "separate-locales": false,

@@ -2,7 +2,7 @@ app-id: net.fsuae.FS-UAE
 branch: stable
 command: fs-uae
 runtime: org.freedesktop.Platform
-runtime-version: 1.6
+runtime-version: 18.08
 sdk: org.freedesktop.Sdk
 rename-desktop-file: fs-uae.desktop
 rename-icon: fs-uae

@@ -2,7 +2,7 @@ app-id: com.sublimetext.three
 branch: stable
 command: sublime
 runtime: org.gnome.Platform
-runtime-version: 3.26
+runtime-version: 3.28
 sdk: org.gnome.Sdk
 separate-locales: false
 finish-args: 
@@ -23,22 +23,18 @@ modules:
       - install -Dm644 com.sublimetext.three.desktop /app/share/applications/com.sublimetext.three.desktop
       - install -Dm644 com.sublimetext.three.png /app/share/icons/hicolor/128x128/apps/com.sublimetext.three.png
       - install -Dm644 com.sublimetext.three-64.png /app/share/icons/hicolor/64x64/apps/com.sublimetext.three.png
-      - cp /usr/bin/ar /app/bin
-      - cp /usr/lib/libbfd-*.so /app/lib
     sources : 
       - type: script
         dest-filename: apply_extra
         commands: 
-          - ar x sublime.deb
-          - rm -f sublime.deb
-          - tar xf data.tar.lzma
-          - rm -f control.tar.gz data.tar.lzma debian-binary
-          - rm -r usr
+          - tar xf sublime.tar.bz2
+          - rm sublime.tar.bz2
+          - mv sublime_text_* sublime_text
       
       - type: script
         dest-filename: sublime.sh
         commands:
-          - exec /app/extra/opt/sublime_text/sublime_text $@
+          - exec /app/extra/sublime_text/sublime_text $@
       
       - type: file
         path: com.sublimetext.three.desktop
@@ -50,8 +46,8 @@ modules:
         path: com.sublimetext.three-64.png
       
       - type: extra-data
-        filename: sublime.deb
-        only-arches: [ x86_64 ]                    
-        url: https://download.sublimetext.com/files/sublime-text_build-3176_amd64.deb
-        sha256: 191acaacb6b0abb773203d5e80f5442db0453d411d426fd514964dea1549cab7
-        size: 8493978
+        filename: sublime.tar.bz2
+        only-arches: [ x86_64 ]          
+        url: https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2          
+        sha256: 74f17c1aec4ddec9d4d4c39f5aec0414a4755d407a05efa571e8892e0b9cf732
+        size: 10314226
