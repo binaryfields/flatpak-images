@@ -19,7 +19,7 @@ mkdir -p "${build_dir}"
 
 for app in "${apps[@]}"; do
 	if [ -e "${app}/${app}.yml" ]; then
-		flatpak-builder --force-clean --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} --repo=${repo} ${build_dir}/${app} ${app}/${app}.yml
+		flatpak run org.flatpak.Builder --force-clean --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} --repo=${repo} ${build_dir}/${app} ${app}/${app}.yml
 	fi
 done
 flatpak build-update-repo --generate-static-deltas --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} ${repo}

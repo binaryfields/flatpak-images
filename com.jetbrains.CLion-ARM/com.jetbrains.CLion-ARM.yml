@@ -15,19 +15,6 @@ finish-args:
   - --socket=x11
   - --talk-name=org.freedesktop.Notifications
 modules: 
-  - name: libudev
-    buildsystem: simple
-    build-commands: 
-      - ar x libudev1.deb
-      - tar xf data.tar.xz
-      - mkdir -p /app/lib
-      - cp lib/x86_64-linux-gnu/libudev.so.* /app/lib/
-    sources: 
-      - type: file
-        dest-filename: libudev1.deb
-        only-arches: [ x86_64 ]
-        url: http://ftp.br.debian.org/debian/pool/main/s/systemd/libudev1_232-25+deb9u2_amd64.deb
-        sha256: 97e0adf86943e2acafe7f343a065f7e6b7306e084797851f2274a40513df6ad7
   - name: clion
     buildsystem: simple
     build-commands: 
@@ -63,9 +50,9 @@ modules:
       - type: extra-data
         filename: clion.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download.jetbrains.com/cpp/CLion-2018.1.2.tar.gz
-        sha256: 8a2f58ca3f7ebcbe0e4c256d7478acf34cbecc65197612b10df5af05f26a1e95
-        size: 343383152
+        url: https://download.jetbrains.com/cpp/CLion-2018.2.2.tar.gz
+        sha256: f267c262560985b75d30db12f8b496d803d2ef82331708cfaed24bae409c59f2
+        size: 469551336
 
       - type: extra-data
         filename: gcc-arm.tar.bz2
