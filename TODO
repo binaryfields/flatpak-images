@@ -1,6 +1,4 @@
 # TODO
 
-- images
-	- add appdata.xml
-- extensions
-	- build jdk from sources
+- separate icons
+	- https://github.com/flathub/org.gnome.Dictionary/blob/master/org.gnome.Dictionary.json
