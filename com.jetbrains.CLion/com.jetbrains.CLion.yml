@@ -7,6 +7,7 @@ runtime-version: 18.08
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args: 
+  - --allow=multiarch
   - --device=all
   - --filesystem=home
   - --share=ipc
@@ -14,6 +15,10 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --talk-name=org.freedesktop.Notifications
+add-extensions:
+  org.freedesktop.Platform.Compat.i386:
+    directory: lib/i386-linux-gnu
+    version: 18.08
 modules:   
   - udev-175.json
   - name: clion
@@ -24,6 +29,7 @@ modules:
       - install -Dm644 com.jetbrains.CLion.desktop /app/share/applications/com.jetbrains.CLion.desktop
       - install -Dm644 com.jetbrains.CLion.png /app/share/icons/hicolor/128x128/apps/com.jetbrains.CLion.png
       - install -Dm644 com.jetbrains.CLion-64.png /app/share/icons/hicolor/64x64/apps/com.jetbrains.CLion.png
+      - mkdir -p /app/lib/i386-linux-gnu /app/lib/debug/lib/i386-linux-gnu
     sources:
       - type: script
         dest-filename: apply_extra
