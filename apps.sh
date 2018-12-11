@@ -2,8 +2,8 @@
 
 repo=~/.var/repo/dsio
 build_dir=build
-gpg_dir=~/.gnupg
-gpg_key=596AE2EE4A73DB1605334629662603BD42FFB34C
+gpg_dir=gpg
+gpg_key=61631B1ADEDD6AC12ECFE71E0BC5AF3C03677912
 
 declare -a apps=(
 	"com.google.AndroidStudio"
@@ -19,7 +19,10 @@ mkdir -p "${build_dir}"
 
 for app in "${apps[@]}"; do
 	if [ -e "${app}/${app}.yml" ]; then
-		flatpak run org.flatpak.Builder --force-clean --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} --repo=${repo} ${build_dir}/${app} ${app}/${app}.yml
+		flatpak-builder --repo=${repo} --force-clean ${build_dir}/${app} ${app}/${app}.yml
 	fi
 done
-flatpak build-update-repo --generate-static-deltas --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} ${repo}
+flatpak build-sign ${repo} --gpg-sign=${gpg_key} --gpg-homedir=${gpg_dir}
+flatpak build-update-repo ${repo} --gpg-sign=${gpg_key} --gpg-homedir=${gpg_dir}
+
+#flatpak build-update-repo --generate-static-deltas --gpg-homedir=${gpg_dir} --gpg-sign=${gpg_key} ${repo}

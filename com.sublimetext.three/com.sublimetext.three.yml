@@ -13,6 +13,7 @@ finish-args:
   - --socket=x11
   - --talk-name=org.gnome.SettingsDaemon
 modules: 
+  - gtk2/gtk2.json
   - name: sublime
     buildsystem: simple
     build-commands:
