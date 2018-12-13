@@ -13,7 +13,6 @@ build-options:
 finish-args:
   - --device=all
   - --filesystem=home:ro
-  - --filesystem=~/.config/vice:create
   - --share=ipc
   - --socket=pulseaudio
   - --socket=x11
