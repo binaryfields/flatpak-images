@@ -3,7 +3,7 @@
 repo=~/.var/repo/dsio
 build_dir=build
 gpg_dir=gpg
-gpg_key=61631B1ADEDD6AC12ECFE71E0BC5AF3C03677912
+gpg_key=1D485659B129DADE
 
 declare -a apps=(
 	"com.google.AndroidStudio"
@@ -11,8 +11,8 @@ declare -a apps=(
 	"com.jetbrains.IntelliJIDEA"
 	"com.sublimetext.three"
 	"com.visualstudio.VSCode"
-	"net.fsuae.FS-UAE"
-	"net.sf.VICE"
+	#"net.fsuae.FS-UAE"
+	#"net.sf.VICE"
 )
 
 mkdir -p "${build_dir}"
