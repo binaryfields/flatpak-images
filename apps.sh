@@ -3,7 +3,7 @@
 repo=~/.var/repo/dsio
 build_dir=build
 gpg_dir=gpg
-gpg_key=1D485659B129DADE
+gpg_key=61631B1ADEDD6AC12ECFE71E0BC5AF3C03677912
 
 declare -a apps=(
 	"com.google.AndroidStudio"
