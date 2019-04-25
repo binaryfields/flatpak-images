@@ -28,16 +28,16 @@
                 {
                     "type": "file",
                     "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u171-b11-2_amd64.deb",
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u181-b13-2~deb9u1_amd64.deb",
                     "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "f6cc4da4d9f324ba846309a24bf9d2cd0c32de4381ba6ac2385ece93dfed80fc"
+                    "sha256": "0ab9a07ac79451abeeead92e6994fbfb636a78da58500a036c34972a11d4cb43"
                 },
                 {
                     "type": "file",
                     "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u171-b11-2_amd64.deb",
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u181-b13-2~deb9u1_amd64.deb",
                     "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "22e162ade2d7ebc6a98acdfe9fa2092cdeb662424c7e0f5073332b29db58a931"
+                    "sha256": "3cd5aaa604241c20428606a65fb6c4a2845f9446cbc617b5f4f1813d5d40ebcd"
                 },
                 {
                     "type": "file",

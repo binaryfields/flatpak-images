@@ -2,7 +2,7 @@ app-id: com.google.AndroidStudio
 branch: stable
 command: android-studio
 runtime: org.freedesktop.Sdk
-runtime-version: 18.08
+runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args: 
@@ -47,7 +47,7 @@ modules:
       
       - type: extra-data
         filename: android-studio.zip
-        url: https://dl.google.com/dl/android/studio/ide-zips/3.3.2.0/android-studio-ide-182.5314842-linux.zip
+        url: https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz
         only-arches: [ x86_64 ]
-        sha256: 8257d3eab61c3da088e26689888a13e53e210c109a4e775ed71158b4471bb06a
-        size: 1064031415
+        sha256: ad2bd4be87a55cfaeee6f28d40d925691314c11862b303d411f9776b76fa1c45
+        size: 1087166186

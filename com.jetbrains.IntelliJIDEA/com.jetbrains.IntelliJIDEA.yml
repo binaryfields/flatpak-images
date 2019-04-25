@@ -2,7 +2,7 @@ app-id: com.jetbrains.IntelliJIDEA
 branch: stable
 command: idea
 runtime: org.freedesktop.Sdk
-runtime-version: 18.08
+runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions: 
   - org.freedesktop.Sdk.Extension.openjdk8
@@ -53,6 +53,6 @@ modules:
       - type: extra-data
         filename: idea.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download.jetbrains.com/idea/ideaIC-2018.3.5.tar.gz
-        sha256: bf756e44b90544e7b991bae325e5da13508d389df35daa7f856e0b56551ea860
-        size: 543015318
+        url: https://download.jetbrains.com/idea/ideaIC-2019.1.1.tar.gz
+        sha256: 58a9389fd89250d7f2519eb242d680147c531342545823fe597a0a0570b06d75
+        size: 577947165

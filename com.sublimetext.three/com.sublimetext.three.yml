@@ -2,7 +2,7 @@ app-id: com.sublimetext.three
 branch: stable
 command: sublime
 runtime: org.freedesktop.Sdk
-runtime-version: 18.08
+runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args: 
@@ -49,6 +49,6 @@ modules:
       - type: extra-data
         filename: sublime.tar.bz2
         only-arches: [ x86_64 ]          
-        url: https://download.sublimetext.com/sublime_text_3_build_3176_x64.tar.bz2          
-        sha256: 74f17c1aec4ddec9d4d4c39f5aec0414a4755d407a05efa571e8892e0b9cf732
-        size: 10314226
+        url: https://download.sublimetext.com/sublime_text_3_build_3207_x64.tar.bz2         
+        sha256: acb64f1de024a0f004888096afa101051e48d96c7a3e7fe96e11312d524938c4
+        size: 13672413
