@@ -29,8 +29,8 @@ modules:
       - type: script
         dest-filename: apply_extra
         commands: 
-          - unzip -q android-studio.zip
-          - rm android-studio.zip
+          - tar xf android-studio.tar.gz
+          - rm android-studio.tar.gz
       
       - type: script
         dest-filename: android-studio.sh
@@ -46,7 +46,7 @@ modules:
         path: com.google.AndroidStudio-64.png
       
       - type: extra-data
-        filename: android-studio.zip
+        filename: android-studio.tar.gz
         url: https://dl.google.com/dl/android/studio/ide-zips/3.4.0.18/android-studio-ide-183.5452501-linux.tar.gz
         only-arches: [ x86_64 ]
         sha256: ad2bd4be87a55cfaeee6f28d40d925691314c11862b303d411f9776b76fa1c45
