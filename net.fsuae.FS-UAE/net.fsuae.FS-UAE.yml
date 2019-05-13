@@ -1,18 +1,43 @@
 app-id: net.fsuae.FS-UAE
 branch: stable
 command: fs-uae
-runtime: org.freedesktop.Platform
-runtime-version: 18.08
-sdk: org.freedesktop.Sdk
+runtime: org.kde.Platform
+runtime-version: '5.12'
+sdk: org.kde.Sdk
 rename-desktop-file: fs-uae.desktop
 rename-icon: fs-uae
 finish-args: 
   - --device=all
   - --filesystem=home
   - --share=ipc
+  - --share=network
   - --socket=pulseaudio
   - --socket=x11
 modules: 
+  - name: PyQt5,
+    cleanup: [/bin/sip, /include, /lib/python3.7/site-packages/*.pyi]
+    config-opts: [--disable-static, --enable-x11]
+    buildsystem: simple
+    build-commands: 
+      - python3 configure.py --confirm-license --no-docstrings --assume-shared --no-sip-files --no-qml-plugin --no-tools --no-qsci-api -d ${FLATPAK_DEST}/lib/python3.7/site-packages --sip=${FLATPAK_DEST}/bin/sip --sip-incdir=${FLATPAK_DEST}/include --stubsdir=${FLATPAK_DEST}/lib/python3.7/site-packages --disable=QtSensors --disable=QtWebEngine --disable=QtQuick --disable=QtQml --disable=QtTest --disable=QtWebChannel --disable=QtWebEngineCore --disable=QWebEngineWidgets --disable=QtQuickWidgets --disable=QtSql --disable=QtXmlPatterns --disable=QtMultimedia --disable=QtMultimediaWidgets --disable=QtLocation --disable=QtDesigner --disable=QtBluetooth --disable=QtWebKit --disable=QtWebKitWidgets --disable=QtNfc --disable=QtPositioning
+      - make -j $(nproc)
+      - make install
+    sources: 
+      - type: archive
+        url: https://www.riverbankcomputing.com/static/Downloads/PyQt5/5.12.2/PyQt5_gpl-5.12.2.tar.gz
+        sha256: c565829e77dc9c281aa1a0cdf2eddaead4e0f844cbaf7a4408441967f03f5f0f
+    modules:
+      - name: sip
+        buildsystem: simple
+        build-commands:
+          - python3 configure.py --sip-module PyQt5.sip -b ${FLATPAK_DEST}/bin -d ${FLATPAK_DEST}/lib/python3.7/site-packages -e ${FLATPAK_DEST}/include -v ${FLATPAK_DEST}/share/sip --stubsdir=${FLATPAK_DEST}/lib/python3.7/site-packages
+          - make
+          - make install
+        sources: 
+          - type: archive
+            url: https://www.riverbankcomputing.com/static/Downloads/sip/4.19.17/sip-4.19.17.tar.gz
+            sha256: 12bcd8f4d5feefc105bc075d12c5090ee783f7380728563c91b8b95d0ec45df3
+
   - name: libmpeg2
     cleanup: [ /bin /include /lib/pkgconfig /lib/*.la ]
     config-opts: [ --disable-static ]
@@ -59,7 +84,29 @@ modules:
       - type: shell
         commands: 
           - ./bootstrap
-  
+
+  - name: fs-uae-launcher
+    make-install-args: [ DESTDIR=/app ]
+    no-autogen: true
+    post-install: 
+      - cp -a /app/share/runtime/applications /app/share/runtime/icons /app/share/
+      - mv /app/share/applications/fs-uae-launcher.desktop /app/share/applications/net.fsuae.FS-UAE.Launcher.desktop
+      - sed -i s/Icon=.*/Icon=net.fsuae.FS-UAE.Launcher/ /app/share/applications/net.fsuae.FS-UAE.Launcher.desktop
+      - mv /app/share/icons/hicolor/64x64/apps/fs-uae-launcher.png /app/share/icons/hicolor/64x64/apps/net.fsuae.FS-UAE.Launcher.png
+      - mv /app/share/icons/hicolor/128x128/apps/fs-uae-launcher.png /app/share/icons/hicolor/128x128/apps/net.fsuae.FS-UAE.Launcher.png
+    sources:
+      - type: git
+        url: https://github.com/FrodeSolheim/fs-uae-launcher
+        branch: master
+        commit: 233d2c65e6660ed9c9456a9b62e43e2cc7bc6d44
+      - type: shell
+        commands:
+          - sed 's/prefix := .*/prefix := /g' -i ./bootstrap
+          - sed 's/cp -a share\/\* $(DESTDIR)$(prefix)\/share/cp -fa share\/\* $(DESTDIR)$(prefix)\/share\/runtime/g' -i ./bootstrap
+      - type: shell
+        commands: 
+          - ./bootstrap
+
   - name: appdata
     buildsystem: simple
     build-commands: 
