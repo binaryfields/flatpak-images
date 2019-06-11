@@ -6,13 +6,13 @@ gpg_dir=gpg
 gpg_key=61631B1ADEDD6AC12ECFE71E0BC5AF3C03677912
 
 declare -a apps=(
-	#"com.google.AndroidStudio"
-	#"com.jetbrains.CLion"
-	#"com.jetbrains.IntelliJIDEA"
-	#"com.sublimetext.three"
-	#"com.visualstudio.VSCode"
+	"com.google.AndroidStudio"
+	"com.jetbrains.CLion"
+	"com.jetbrains.IntelliJIDEA"
+	"com.sublimetext.three"
+	"com.visualstudio.VSCode"
 	"net.fsuae.FS-UAE"
-	#"net.sf.VICE"
+	"net.sf.VICE"
 )
 
 mkdir -p "${build_dir}"

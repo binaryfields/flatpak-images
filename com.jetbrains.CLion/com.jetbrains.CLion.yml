@@ -55,6 +55,6 @@ modules:
       - type: extra-data
         filename: clion.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download.jetbrains.com/cpp/CLion-2018.3.4.tar.gz
-        sha256: 963fb343272e5903ac7dc944cc64ea9541ab4c150cc4ea796dcb0fb613bff4fd
-        size: 454682485
+        url: https://download.jetbrains.com/cpp/CLion-2019.1.4.tar.gz
+        sha256: c9249f7a378b66071e4c4308a339bfd3afa38765e9316ffaaeeec66fcb3b8bb1
+        size: 431747416
