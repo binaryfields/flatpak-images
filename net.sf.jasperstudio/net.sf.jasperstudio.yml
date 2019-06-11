@@ -1,0 +1,59 @@
+app-id: net.sf.jasperstudio
+branch: stable
+command: jss
+runtime: org.freedesktop.Sdk
+runtime-version: '18.08'
+sdk: org.freedesktop.Sdk
+sdk-extensions: 
+  - org.freedesktop.Sdk.Extension.openjdk8
+separate-locales: false
+finish-args: 
+  - --device=dri
+  - --filesystem=home
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --talk-name=org.freedesktop.Notifications
+modules: 
+  - name: openjdk
+    buildsystem: simple
+    build-commands: 
+      - /usr/lib/sdk/openjdk8/install-jdk.sh
+  
+  - name: jasperstudio
+    buildsystem: simple
+    build-commands: 
+      - install -D apply_extra /app/bin/apply_extra
+      - install -D jss.sh /app/bin/jss
+      - install -Dm644 net.sf.jasperstudio.desktop /app/share/applications/net.sf.jasperstudio.desktop
+      - install -Dm644 net.sf.jasperstudio.png /app/share/icons/hicolor/128x128/apps/net.sf.jasperstudio.png
+      - install -Dm644 net.sf.jasperstudio-64.png /app/share/icons/hicolor/64x64/apps/net.sf.jasperstudio.png
+    sources: 
+      - type: script
+        dest-filename: apply_extra
+        commands: 
+          - tar xf jasperstudio.tgz
+          - rm jasperstudio.tgz
+          - mv TIB_js-studiocomm_* jasperstudio
+          - sed -i s/SWT_GTK3=.*/SWT_GTK3=1/ /app/extra/jasperstudio/runjss.sh
+
+      - type: script
+        dest-filename: jss.sh
+        commands: [ /app/extra/jasperstudio/runjss.sh ]
+            
+      - type: file
+        path: net.sf.jasperstudio.desktop
+      
+      - type: file
+        path: net.sf.jasperstudio.png
+      
+      - type: file
+        path: net.sf.jasperstudio-64.png
+      
+      - type: extra-data
+        filename: jasperstudio.tgz
+        only-arches: [ x86_64 ]
+        url: https://svwh.dl.sourceforge.net/project/jasperstudio/JaspersoftStudio-6.8.0/TIB_js-studiocomm_6.8.0_linux_x86_64.tgz
+        sha256: 4026345be1535698e2da7f0670e7da3d6bd30ce8373babbf1406920fec19ae0f
+        size: 412920790

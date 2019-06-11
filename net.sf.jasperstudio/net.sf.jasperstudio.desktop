@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jaspersoft Studio
+Exec=jss
+Icon=net.sf.jasperstudio
+Comment=The Eclipse-based report development tool for JasperReports 
+Terminal=false
+Type=Application
+Categories=Development;IDE;Java;
