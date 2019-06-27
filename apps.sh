@@ -10,10 +10,10 @@ declare -a apps=(
 	#"com.jetbrains.CLion"
 	#"com.jetbrains.IntelliJIDEA"
 	#"com.sublimetext.three"
-	#"com.visualstudio.VSCode"
+	"com.visualstudio.VSCode"
 	#"net.fsuae.FS-UAE"
 	#"net.sf.VICE"
-	"net.sf.jasperstudio"
+	#"net.sf.jasperstudio"
 )
 
 mkdir -p "${build_dir}"
