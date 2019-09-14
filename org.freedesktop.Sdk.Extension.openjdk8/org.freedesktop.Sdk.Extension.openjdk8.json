@@ -1,9 +1,9 @@
 {
     "id": "org.freedesktop.Sdk.Extension.openjdk8",
-    "branch": "18.08",
+    "branch": "19.08",
     "build-extension": true,
     "runtime": "org.freedesktop.Sdk",
-    "runtime-version": "18.08",
+    "runtime-version": "19.08",
     "sdk": "org.freedesktop.Sdk",
     "sdk-extensions": [],
     "separate-locales": false,
@@ -28,16 +28,16 @@
                 {
                     "type": "file",
                     "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u181-b13-2~deb9u1_amd64.deb",
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jdk-headless_8u222-b10-1~deb9u1_amd64.deb",
                     "dest-filename": "openjdk-8-jdk-headless.deb",
-                    "sha256": "0ab9a07ac79451abeeead92e6994fbfb636a78da58500a036c34972a11d4cb43"
+                    "sha256": "d84ceb58d8a0daf881db292c611f5e9b0ee0c6527bc37f712e125e1c462c7f71"
                 },
                 {
                     "type": "file",
                     "only-arches": ["x86_64"],
-                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u181-b13-2~deb9u1_amd64.deb",
+                    "url": "http://ftp.br.debian.org/debian/pool/main/o/openjdk-8/openjdk-8-jre-headless_8u222-b10-1~deb9u1_amd64.deb",
                     "dest-filename": "openjdk-8-jre-headless.deb",
-                    "sha256": "3cd5aaa604241c20428606a65fb6c4a2845f9446cbc617b5f4f1813d5d40ebcd"
+                    "sha256": "8c90afb471adc995c617c3f927346a3c4df43b9df9aad937b79cf0a6d3712dfd"
                 },
                 {
                     "type": "file",
