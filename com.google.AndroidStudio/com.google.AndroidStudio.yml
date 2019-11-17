@@ -47,7 +47,7 @@ modules:
       
       - type: extra-data
         filename: android-studio.tar.gz
-        url: https://dl.google.com/dl/android/studio/ide-zips/3.5.0.21/android-studio-ide-191.5791312-linux.tar.gz
+        url: https://dl.google.com/dl/android/studio/ide-zips/3.5.2.0/android-studio-ide-191.5977832-linux.tar.gz
         only-arches: [ x86_64 ]
-        sha256: 5794fd6edca6e4daa31f5ed710670d0b425534549a6c4aa2e3e9753ae116736f
-        size: 765055716
+        sha256: f838486ce847db802bdaf1163059033934146c6ccdcdaa9a398bd85cda348d4d
+        size: 774539586

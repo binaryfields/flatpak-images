@@ -19,7 +19,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands: 
-      - /usr/lib/sdk/openjdk8/install-jdk.sh
+      - /usr/lib/sdk/openjdk8/installjdk.sh
   
   - name: idea
     buildsystem: simple
@@ -53,6 +53,6 @@ modules:
       - type: extra-data
         filename: idea.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download.jetbrains.com/idea/ideaIC-2019.2.2.tar.gz
-        sha256: fa2d4229516a49ee776a524cda324c74b12ffb479a703b44c15c84e9c5731faf
-        size: 672831239
+        url: https://download.jetbrains.com/idea/ideaIC-2019.2.4.tar.gz
+        sha256: f871d4b9b23e0676a653bb9fdf80e8cfb970ddc835b1e7dc2be84dd329ab5b04
+        size: 676096510

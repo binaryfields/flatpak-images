@@ -2,7 +2,7 @@ app-id: net.sf.jasperstudio
 branch: stable
 command: jss
 runtime: org.freedesktop.Sdk
-runtime-version: '18.08'
+runtime-version: '19.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions: 
   - org.freedesktop.Sdk.Extension.openjdk8
@@ -19,7 +19,7 @@ modules:
   - name: openjdk
     buildsystem: simple
     build-commands: 
-      - /usr/lib/sdk/openjdk8/install-jdk.sh
+      - /usr/lib/sdk/openjdk8/installjdk.sh
   
   - name: jasperstudio
     buildsystem: simple
