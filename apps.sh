@@ -6,10 +6,10 @@ gpg_dir=gpg
 gpg_key=61631B1ADEDD6AC12ECFE71E0BC5AF3C03677912
 
 declare -a apps=(
-	#"com.google.AndroidStudio"
+	"com.google.AndroidStudio"
 	"com.jetbrains.CLion"
-	#"com.jetbrains.IntelliJIDEA"
-	#"net.sf.jasperstudio"
+	"com.jetbrains.IntelliJIDEA"
+	"net.sf.jasperstudio"
 	#"net.fsuae.FS-UAE"
 	#"net.sf.VICE"
 )
