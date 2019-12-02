@@ -2,7 +2,7 @@ app-id: com.jetbrains.CLion
 branch: stable
 command: clion
 runtime: org.freedesktop.Sdk
-runtime-version: '19.08'
+runtime-version: '18.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args: 
@@ -17,7 +17,7 @@ finish-args:
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: '19.08'
+    version: '18.08'
 modules:   
   - udev-175.json
   - name: clion
