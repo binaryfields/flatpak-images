@@ -2,7 +2,7 @@ app-id: com.jetbrains.CLion
 branch: stable
 command: clion
 runtime: org.freedesktop.Sdk
-runtime-version: '18.08'
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 separate-locales: false
 finish-args: 
@@ -17,7 +17,7 @@ finish-args:
 add-extensions:
   org.freedesktop.Platform.Compat.i386:
     directory: lib/i386-linux-gnu
-    version: '18.08'
+    version: '20.08'
 modules:   
   - udev-175.json
   - name: clion
@@ -54,6 +54,6 @@ modules:
       - type: extra-data
         filename: clion.tar.gz
         only-arches: [ x86_64 ]
-        url: https://download.jetbrains.com/cpp/CLion-2019.2.5.tar.gz
-        sha256: aedec47a538c9a2b654c30719ed7f0111af0a708a2aeb2a9f36a1c0767841a5c
-        size: 489092707
+        url: https://download.jetbrains.com/cpp/CLion-2020.2.1.tar.gz
+        sha256: 7ba570e841df686138d869f59c1c3b4a3679e22b608e17b079525101bc1aaaea
+        size: 553923147
